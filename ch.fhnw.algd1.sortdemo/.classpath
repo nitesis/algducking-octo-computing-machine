@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="ch.fhnw.algd.sortdemo.algorithms.algd1.jar"/>
+	<classpathentry kind="lib" path="ch.fhnw.algd.sortdemo.awt.numericalview.jar"/>
+	<classpathentry kind="lib" path="ch.fhnw.algd.sortdemo.awt.simpleview.jar"/>
+	<classpathentry kind="lib" path="ch.fhnw.algd.sortdemo.awt.timerview.jar"/>
+	<classpathentry kind="lib" path="ch.fhnw.algd.sortdemo.awt.window.jar"/>
+	<classpathentry kind="lib" path="ch.fhnw.algd.sortdemo.framework.jar"/>
+	<classpathentry kind="lib" path="ch.fhnw.algd.sortdemo.viewPicker.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
