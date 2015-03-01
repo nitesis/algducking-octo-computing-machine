@@ -48,13 +48,16 @@ public class MyLinkedList<E> extends MyAbstractList<E> {
 	@Override
 	public boolean contains(Object o) {
 		
+		Node <E> temp = first;
+		
+		
 		if (o == null) {
 			throw new NullPointerException();
 		}
-		while (first != null && !first.equals(o)) {
-			first = first.next;
+		while (temp != null && !temp.elem.equals(o)) {
+			temp = temp.next;
 		}
-		return ( first != null ? true:false);
+		return (temp != null);
 	}
 
 	@Override
