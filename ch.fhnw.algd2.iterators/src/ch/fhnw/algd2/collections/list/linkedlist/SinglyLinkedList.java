@@ -2,6 +2,7 @@ package ch.fhnw.algd2.collections.list.linkedlist;
 
 import java.util.Arrays;
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 import ch.fhnw.algd2.collections.list.MyAbstractList;
 
@@ -135,14 +136,22 @@ public class SinglyLinkedList<E> extends MyAbstractList<E> {
 	}
 
 	private class MyIterator implements Iterator<E> {
+		Node<E> next = first;
+		
 		@Override
 		public boolean hasNext() {
-			throw new UnsupportedOperationException();
+			return next != null;
 		}
 
 		@Override
 		public E next() {
-			throw new UnsupportedOperationException();
+			if (next == null) {
+				throw new NoSuchElementException();
+			}
+			
+			E e = next.elem;
+			next = next.next;
+			return e;
 		}
 
 		@Override
