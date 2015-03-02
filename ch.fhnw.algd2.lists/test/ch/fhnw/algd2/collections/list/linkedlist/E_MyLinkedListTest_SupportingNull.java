@@ -54,5 +54,23 @@ public class E_MyLinkedListTest_SupportingNull extends AbstractMyLinkedListTest 
 		list.add(null);
 		assertFalse(list.remove("Zwei"));
 	}
+	
+    @Test
+    public void removeTwo_NullValueInListNotHead_False() {
+          list.add(2);
+          list.add(null);
+          assertFalse(list.remove("Zwei"));
+    }
 
+    
+    @Test
+
+    public void contains_elementAfterNull_true() {
+          list.add(1);
+          list.add(null);
+          list.add(2);
+          assertTrue(list.contains(2));
+
+    }
+    
 }

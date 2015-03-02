@@ -26,8 +26,8 @@ public class D_MyLinkedListTest_Complete extends AbstractMyLinkedListTest {
 
 	@Test
 	public void add_Numbers1To5_AddedInOrder() {
-		Integer[] numbers = new Integer[] { new Integer(1), new Integer(2),
-				new Integer(2), new Integer(3) };
+		Integer[] numbers = new Integer[] { Integer.valueOf(1), Integer.valueOf(2),
+				Integer.valueOf(2), Integer.valueOf(3) };
 		addNumbersToList(numbers);
 		checkOrderByReference(numbers);
 	}
@@ -58,10 +58,10 @@ public class D_MyLinkedListTest_Complete extends AbstractMyLinkedListTest {
 
 	@Test
 	public void add_ElementAtIndex2_AddedAtIndex2() {
-		Integer one = new Integer(1);
-		Integer two = new Integer(2);
-		Integer three = new Integer(3);
-		Integer four = new Integer(4);
+		Integer one = Integer.valueOf(1);
+		Integer two = Integer.valueOf(2);
+		Integer three = Integer.valueOf(3);
+		Integer four = Integer.valueOf(4);
 		Integer[] numbers = new Integer[] { one, two, three, four };
 		for (int i = 0; i < numbers.length; i++) {
 			list.add(numbers[i]);
@@ -76,13 +76,13 @@ public class D_MyLinkedListTest_Complete extends AbstractMyLinkedListTest {
 
 	@Test(expected = IndexOutOfBoundsException.class)
 	public void add_NegativeIndex_ThrowIndexOutOfBoundsException() {
-		list.add(-1, new Integer(2));
+		list.add(-1, Integer.valueOf(2));
 	}
 
 	@Test(expected = IndexOutOfBoundsException.class)
 	public void add_TooLargeIndex_ThrowIndexOutOfBoundsException() {
 		addNumbersFromOneToFiveToList();
-		list.add(list.size() + 1, new Integer(2));
+		list.add(list.size() + 1, Integer.valueOf(2));
 	}
 
 	/*
@@ -113,10 +113,10 @@ public class D_MyLinkedListTest_Complete extends AbstractMyLinkedListTest {
 
 	@Test
 	public void remove_ElementAtIndex2WhenNumbers1To4Added_Element3Removed() {
-		Integer one = new Integer(1);
-		Integer two = new Integer(2);
-		Integer three = new Integer(3);
-		Integer four = new Integer(4);
+		Integer one = Integer.valueOf(1);
+		Integer two = Integer.valueOf(2);
+		Integer three = Integer.valueOf(3);
+		Integer four = Integer.valueOf(4);
 		Integer[] numbers = new Integer[] { one, two, three, four };
 		for (int i = 0; i < numbers.length; i++) {
 			list.add(numbers[i]);
@@ -138,6 +138,16 @@ public class D_MyLinkedListTest_Complete extends AbstractMyLinkedListTest {
 		addNumbersFromOneToFiveToList();
 		list.remove(list.size());
 	}
+	
+	
+	@Test
+	public void removeElementByIndex_EqualElementBeforeInList_SecondElementRemoved(){
+		addNumbersFromOneToFiveToList();
+		Integer number = Integer.valueOf(2);
+		list.add(number);
+		assertSame(number, list.remove(5));
+		checkOrderDependentOccurrence(new Integer[]{1,2,3,4,5});
+	}
 
 	/*
 	 * Check remove again, order-dependent
@@ -145,7 +155,7 @@ public class D_MyLinkedListTest_Complete extends AbstractMyLinkedListTest {
 	@Test
 	public void remove_ExistingElementAtHead_ElementRemoved() {
 		addNumbersFromOneToFiveToList();
-		Integer number = new Integer(1);
+		Integer number = Integer.valueOf(1);
 		assertTrue(list.remove(number));
 		assertFalse(list.contains(number));
 		checkOrderDependentOccurrence(new Integer[] { 2, 3, 4, 5 });
@@ -154,7 +164,7 @@ public class D_MyLinkedListTest_Complete extends AbstractMyLinkedListTest {
 	@Test
 	public void remove_ExistingElementAtTail_ElementRemoved() {
 		addNumbersFromOneToFiveToList();
-		Integer number = new Integer(5);
+		Integer number = Integer.valueOf(5);
 		assertTrue(list.remove(number));
 		assertFalse(list.contains(number));
 		checkOrderDependentOccurrence(new Integer[] { 1, 2, 3, 4 });
@@ -163,20 +173,62 @@ public class D_MyLinkedListTest_Complete extends AbstractMyLinkedListTest {
 	@Test
 	public void remove_ExistingElementInBetween_ElementRemoved() {
 		addNumbersFromOneToFiveToList();
-		Integer number = new Integer(3);
+		Integer number = Integer.valueOf(3);
 		assertTrue(list.remove(number));
 		assertFalse(list.contains(number));
 		checkOrderDependentOccurrence(new Integer[] { 1, 2, 4, 5 });
 	}
+	
+	@Test (expected=IndexOutOfBoundsException.class)
+	public void get_OnIndex0InEmptyList_IndexOutOfBoundsException() {
+		list.get(0);
+	}
+	
+	@Test (expected=IndexOutOfBoundsException.class)
+	public void get_Index5OnListWith5Elements_IndexOutOfBoundsException() {
+		addNumbersFromOneToFiveToList();
+		list.get(5);
+	}
 
+	@Test
+	public void get_FirstIndex_FirstElement() {
+		Integer one = Integer.valueOf(1);
+		Integer[] numbers = new Integer[] { one , Integer.valueOf(2),
+				Integer.valueOf(3), Integer.valueOf(4), Integer.valueOf(5) };
+		addNumbersToList(numbers);
+		assertSame(one, list.get(0));
+	}
+	
+	@Test
+	public void get_MiddleIndex_MiddleElement() {
+		Integer three = Integer.valueOf(3);
+		Integer[] numbers = new Integer[] { Integer.valueOf(1), Integer.valueOf(2),
+				three, Integer.valueOf(4), Integer.valueOf(5) };
+		addNumbersToList(numbers);
+		assertSame(three, list.get(2));
+	}
+	
+	@Test
+	public void get_LastIndex_LastElement() {
+		Integer five = Integer.valueOf(5);
+		Integer[] numbers = new Integer[] { Integer.valueOf(1), Integer.valueOf(2),
+				Integer.valueOf(5), Integer.valueOf(4), five };
+		addNumbersToList(numbers);
+		assertSame(five, list.get(4));
+	}
+	
+	
+	
 	private void checkOrderByReference(Integer[] numbers) {
 		assertEquals(list.size(), numbers.length);
+		Object[] listArray = list.toArray();
 		for (int i = 0; i < numbers.length; i++) {
-			//TODO: To Array
 			assertSame(
 					"Please add elements at the end of the list (default behaviour for lists add method)",
-					numbers[i], list.toArray()[i]);
+					numbers[i], listArray[i]);
 		}
 	}
+	
+	
 
 }

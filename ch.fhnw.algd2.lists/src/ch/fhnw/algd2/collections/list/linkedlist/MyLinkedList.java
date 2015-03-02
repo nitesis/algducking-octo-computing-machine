@@ -8,6 +8,7 @@ public class MyLinkedList<E> extends MyAbstractList<E> {
 	private int size = 0;
 	private Node<E> first;
 	private Node<E> last;
+	
 
 	@Override
 	public boolean add(E e) {
@@ -35,8 +36,32 @@ public class MyLinkedList<E> extends MyAbstractList<E> {
 
 	@Override
 	public boolean remove(Object o) {
-		// TODO implement this operation (part C)
-		throw new UnsupportedOperationException();
+
+		if (o != null && contains(o)) {
+			if (first.next == null) {
+				o = null;
+//				first = new Node<E> (null);
+			} else {
+				o = last;
+				last = null;
+			}
+			size--;
+			last.next = null;
+			return true;
+		}
+		return false;
+	}
+	
+	public int indexOf(Object o) {
+		if (o == null) {
+			throw new NullPointerException();
+		}
+		Object [] temp = this.toArray();
+		int i = size - 1;		
+		while (i >= 0 && !temp[i].equals(o)) {
+			i--; 
+		} 
+		return i;
 	}
 
 	@Override
@@ -47,10 +72,8 @@ public class MyLinkedList<E> extends MyAbstractList<E> {
 
 	@Override
 	public boolean contains(Object o) {
-		
-		Node <E> temp = first;
-		
-		
+
+		Node <E> temp = first;	
 		if (o == null) {
 			throw new NullPointerException();
 		}
