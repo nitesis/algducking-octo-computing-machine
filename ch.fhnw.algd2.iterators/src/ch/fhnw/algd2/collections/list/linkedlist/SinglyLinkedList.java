@@ -1,6 +1,7 @@
 package ch.fhnw.algd2.collections.list.linkedlist;
 
 import java.util.Arrays;
+import java.util.ConcurrentModificationException;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
@@ -10,6 +11,8 @@ public class SinglyLinkedList<E> extends MyAbstractList<E> {
 	// variable int modCount already declared by AbstractList<E>
 	private int size = 0;
 	private Node<E> first, last;
+	
+	private int countL = 0;
 
 	@Override
 	public boolean add(E e) {
@@ -18,6 +21,7 @@ public class SinglyLinkedList<E> extends MyAbstractList<E> {
 		else first = n;
 		last = n;
 		size++;
+		countL++;
 		return true;
 	}
 
@@ -39,6 +43,7 @@ public class SinglyLinkedList<E> extends MyAbstractList<E> {
 			n.next = new Node<E>(element, n.next);
 		}
 		size++;
+		countL++;
 	}
 
 	@Override
@@ -53,6 +58,7 @@ public class SinglyLinkedList<E> extends MyAbstractList<E> {
 			if (p != null) p.next = n.next;
 			else first = n.next;
 			size--;
+			countL++;
 			return true;
 		} else return false;
 	}
@@ -76,6 +82,7 @@ public class SinglyLinkedList<E> extends MyAbstractList<E> {
 			if (n.next == null) last = n;
 		}
 		size--;
+		countL++;
 		return e;
 	}
 
@@ -137,6 +144,7 @@ public class SinglyLinkedList<E> extends MyAbstractList<E> {
 
 	private class MyIterator implements Iterator<E> {
 		Node<E> next = first;
+		private int countI = countL;
 		
 		@Override
 		public boolean hasNext() {
@@ -148,7 +156,9 @@ public class SinglyLinkedList<E> extends MyAbstractList<E> {
 			if (next == null) {
 				throw new NoSuchElementException();
 			}
-			
+			if (countI != countL) {
+				throw new ConcurrentModificationException();
+			}
 			E e = next.elem;
 			next = next.next;
 			return e;
