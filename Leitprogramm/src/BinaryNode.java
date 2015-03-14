@@ -1,7 +1,7 @@
 /**
- * ETH Zürich; Leitprogramm; Binäre Suchbäume ----- 
- * Das ist die Klasse eines einzelnen Knotens des Binärbaums. 
- * @author Björn Steffen, Timur Erdag, Christina Class
+ * ETH Zï¿½rich; Leitprogramm; Binï¿½re Suchbï¿½ume ----- 
+ * Das ist die Klasse eines einzelnen Knotens des Binï¿½rbaums. 
+ * @author Bjï¿½rn Steffen, Timur Erdag, Christina Class
  * @version 1.0 
  */
 public class BinaryNode {
@@ -21,8 +21,8 @@ public class BinaryNode {
     }
     
     /**
-     * getter Methode für den Schlüssel
-     * @return den Schlüsselwert
+     * getter Methode fï¿½r den Schlï¿½ssel
+     * @return den Schlï¿½sselwert
      */
     public int getKey()
     {
@@ -30,8 +30,8 @@ public class BinaryNode {
     }
     
     /**
-     * setter Methode für den Schlüssel
-     * @param value der neue Schlüsselwert
+     * setter Methode fï¿½r den Schlï¿½ssel
+     * @param value der neue Schlï¿½sselwert
      */
     public void setKey(int value)
     {
@@ -40,7 +40,7 @@ public class BinaryNode {
     
     
     /**
-     * getter Methode für das rechte Kind
+     * getter Methode fï¿½r das rechte Kind
      * @return rechtes Kind
      */
     public BinaryNode getRight()
@@ -49,7 +49,7 @@ public class BinaryNode {
     }
     
     /**
-     * setter Methode für das rechte Kind
+     * setter Methode fï¿½r das rechte Kind
      * @param newRight Referenz auf neues rechtes Kind
      */
     public void setRight(BinaryNode newRight)
@@ -58,7 +58,7 @@ public class BinaryNode {
     }
     
     /**
-     * getter Methode für das linke Kind
+     * getter Methode fï¿½r das linke Kind
      * @return linkes Kind
      */
     public BinaryNode getLeft()
@@ -67,7 +67,7 @@ public class BinaryNode {
     }
     
     /**
-     * setter Methode für das linke Kind
+     * setter Methode fï¿½r das linke Kind
      * @param newLeft Referenz auf neues linkes Kind
      */
     public void setLeft(BinaryNode newLeft)
@@ -76,21 +76,29 @@ public class BinaryNode {
     }
     
     /**
-     * Ausgabe des Binärbaumes in der preorder Reihenfolge. Diese Methode 
+     * Ausgabe des Binï¿½rbaumes in der preorder Reihenfolge. Diese Methode 
      * ist von Ihnen in Aufgabe 3.3 des Leitprogramms zu implementieren.
      */
     // Implementiere diese Methode nach den Vorgaben der Aufgabe.
-    // Geben Sie dazu für jeden Knoten den Schlüssel aus,
+    // Geben Sie dazu fï¿½r jeden Knoten den Schlï¿½ssel aus,
     // gefolgt von einem Leerzeichen.
     // beachten Sie: der Algrithmus, der auf S. 27 des Leitprogramms beschrieben
     // ist, hat einen Parameter (vom Typ Knoten).
-    // Sie müssen also eine weitere Methode preorder() definieren, und diese in 
+    // Sie mï¿½ssen also eine weitere Methode preorder() definieren, und diese in 
     // preorderPrint() aufrufen
-    // für eine Ausgabe OHNE anschliessenden Zeilenumbruch verwenden Sie bitte:
+    // fï¿½r eine Ausgabe OHNE anschliessenden Zeilenumbruch verwenden Sie bitte:
     // System.out.print()
     
+    public void preorder(BinaryNode node) {
+    	if (node != null) {
+    		System.out.print(node.key + " ");
+    		preorder(node.left);
+    		preorder(node.right);
+    	}
+    }
     public void preorderPrint() 
-    {   
+    {
+    	preorder(this);
     }
 }
 
