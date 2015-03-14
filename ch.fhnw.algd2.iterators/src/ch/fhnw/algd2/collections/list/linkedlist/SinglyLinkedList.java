@@ -11,7 +11,6 @@ public class SinglyLinkedList<E> extends MyAbstractList<E> {
 	// variable int modCount already declared by AbstractList<E>
 	private int size = 0;
 	private Node<E> first, last;
-	
 	private int countL = 0;
 
 	@Override
@@ -166,7 +165,12 @@ public class SinglyLinkedList<E> extends MyAbstractList<E> {
 
 		@Override
 		public void remove() {
-			throw new UnsupportedOperationException();
+			SinglyLinkedList<E> list = new SinglyLinkedList<E>();
+			Iterator<E> it = iterator();
+			if(hasNext()) {
+				it.next();
+				list.remove(it.next());
+			}
 		}
 	}
 
