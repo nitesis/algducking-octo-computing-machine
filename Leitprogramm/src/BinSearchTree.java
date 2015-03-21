@@ -161,14 +161,31 @@ public class BinSearchTree {
 	// als //# taucht immer die Zeile des Pseudocodes in der Musterl�sung des
 	// Leitprogramms auf
 	public BinSearchTree delete(BinSearchTree node, int key) {
+		
 		if (node != null) {
+			if (key < node.getKey()) {
+				return delete(node.getLeft(), key);
+			} else if (key > node.getKey()) {
+				return delete(node.getRight(), key);
+			} else {
+				node = null;
+			}
 //			Fall 1
 			if (node.getLeft() == null && node.getRight() == null) {
-				return node = null;
+				node = node.getRight();
+				while (node != null) {
+					node = node.getLeft();
+				}
+				return node;
 			}
 //			Fall 3
 			else if (node.getLeft() != null && node.getRight() != null) {
-				return node.getRight().getLeft();
+				if (node.getRight() != null) {
+					while (node.getRight().getLeft() != null) {
+						node = node.getRight().getLeft();
+						node = node.getLeft();
+					}
+				}	
 			}
 //			Fall 2
 			else {

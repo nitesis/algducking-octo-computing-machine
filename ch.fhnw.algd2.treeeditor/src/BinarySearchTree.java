@@ -127,7 +127,44 @@ class BinarySearchTree<K extends Comparable<? super K>, E> implements
 	 *          the key of the item to remove.
 	 */
 	@Override
-	public void remove(K key) {}
+	public void remove(K key) {
+		Node<K, E> node = new Node(key, search(key));
+		
+		if (node != null) {
+			if (key.compareTo(node.getKey()) < 0) {
+				remove(node.getLeft().getKey());
+			} else if (key.compareTo(node.getKey()) > 0) {
+				remove(node.getRight().getKey());
+			} else {
+				node = null;
+			}
+//			Fall 1: Grad 0
+			if (node.getLeft() == null && node.getRight() == null) {
+				node = null;
+			}
+//			Fall 3: Grad 2
+			else if (node.getLeft() != null && node.getRight() != null) {
+				if (node.getRight() != null) {
+					while (node.getRight().getLeft() != null) {
+						node = new Node(node.getRight().getLeft().getKey(), node.getRight().getLeft());
+						
+					}
+				}	
+			}
+//			Fall 2: Grad 1
+			else {
+				if (node.getLeft() != null) {
+					node = new Node (node.getLeft().getKey(), node.getLeft());
+			}
+				if (node.getRight() != null) {
+					node = new Node (node.getRight().getKey(), node.getRight());
+				}
+				
+			}
+		}
+		
+	}
+	
 
 	@Override
 	public String toString() {
