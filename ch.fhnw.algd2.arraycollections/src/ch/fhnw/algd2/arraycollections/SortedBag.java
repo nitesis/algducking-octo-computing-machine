@@ -19,59 +19,41 @@ public class SortedBag<E extends Comparable<? super E>> extends
 	
 	@Override
 	public boolean add(E e) {
-		if (e == null) {
-			throw new NullPointerException("no value");
-		}
-		
-		int i;
-		if (size < data.length) {
-//			Falls Hinzufügen möglich, wird size um 1 vergrössert
+		if (size == data.length) {
+			throw new IllegalStateException("Sorry, wir sind voll");
+		}else{
+			// Index des hinzuzufügenden Objektes
+			int i = indexOf(e) + 1;
+			for (int j = size; j != i; j--) {
+				data[j] = data[j - 1]; 
+			}
+			data[i] = e;
 			size++;
-//			Falls e noch nicht vorhanden, wird i durch Umformen errechnet
-			if (Arrays.binarySearch(data, 0, data.length, e) < 0){				
-				i = (Arrays.binarySearch(data, 0, data.length, e) + 1) * (-1);
-//			Falls e bereits vorhanden, wird i direkt durch Methodenaufruf zurückgegeben	
-			} else {
-				i = Arrays.binarySearch(data, 0, data.length, e);
-			}
-//			Es werden alle Elemente nach i um eins nach hinten verschoben, um Platz zu machen für e
-//			Anschliessend wird e an Index i eingesetzt
-			int n = data.length;
-			for (int i = 1; i < n; i++) {
-			for (int j = i; j > 0 && (((Comparable<? super E>) data[j - 1]).compareTo((E) data[j]) > 0); j--) { 
-				Object t = data[j - 1]; 
-				data[j - 1] = data[j]; 
-				data[j] = t;
-			}
+			return true;
 		}
-		return true;
+	
 	}
 
 	@Override
 	public boolean remove(Object o) {
-		if (contains(o)) {
-			int n = data.length;
-			for (int i = 1; i < n; i++) {
-				for (int j = i; j > 0 && (((Comparable<? super E>) data[j - 1]).compareTo((E) data[j]) > 0); j--) { 
-					Object temp = data[j - 1]; 
-					data[j - 1] = data[j]; 
-					data[j] = temp;
-				}
+		int i = indexOf(o);
+		if (i < 0 || !data[i].equals(o)) {
+			return false;
+		}else{
+			data[i] = null;
+			while(i != size - 1) {
+				data[i] = data[i + 1];
+				i++;
 			}
-			
 			size--;
 			return true;
 		}
-		return false;
 	}
 
 	@Override
 	public boolean contains(Object o) {
-		int i = 0;
-		while (i < data.length  && data[i].equals(o)) {
-			i++;
-		}
-		return (i < data.length);
+		int i = indexOf(o);
+		return i>=0 && data[i].equals(o);
 	}
 
 	@Override
@@ -81,8 +63,25 @@ public class SortedBag<E extends Comparable<? super E>> extends
 
 	@Override
 	public int size() {
-		
 		return size;
+	}
+	
+	// Indexsuche mit binärer Suche
+	private int indexOf(Object o) {
+		if (o==null) {
+			throw new NullPointerException();
+		}else{
+			int l = -1;
+			int h = size;
+			while (h - l > 1) {
+				int m = (h + l) / 2;
+				if (((E) data[m]).compareTo((E) o) <= 0) {
+					l = m;
+				}else{
+					h = m;
+				}
+			}return l;
+		}
 	}
 
 	public static void main(String[] args) {
