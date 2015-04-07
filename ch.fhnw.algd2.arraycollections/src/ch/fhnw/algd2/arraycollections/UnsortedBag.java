@@ -5,6 +5,7 @@ import java.util.Arrays;
 public class UnsortedBag<E> extends AbstractArrayCollection<E> {
 	public static final int DEFAULT_CAPACITY = 100;
 	private Object[] data;
+	private int size = 0;
 
 	public UnsortedBag() {
 		this(DEFAULT_CAPACITY);
@@ -16,17 +17,35 @@ public class UnsortedBag<E> extends AbstractArrayCollection<E> {
 
 	@Override
 	public boolean add(E e) {
-		throw new UnsupportedOperationException();
+		if (size == data.length) {
+			throw new IllegalStateException("Collection is full.");
+		}else if(e == null){
+			throw new NullPointerException();
+		}else{
+			data[size] = e;
+			size++;
+			return true;
+		}
 	}
 
 	@Override
 	public boolean remove(Object o) {
-		throw new UnsupportedOperationException();
+		int i = indexOf(o);
+		if (i < 0){
+			return false;
+		}
+		else {
+			data[i] = data[size-1];
+			data[size-1] = null;
+			size--;
+			
+		}
+		return true;
 	}
 
 	@Override
 	public boolean contains(Object o) {
-		throw new UnsupportedOperationException();
+		return (indexOf(o) >= 0);
 	}
 
 	@Override
@@ -36,7 +55,18 @@ public class UnsortedBag<E> extends AbstractArrayCollection<E> {
 
 	@Override
 	public int size() {
-		return 0;
+		return size;
+	}
+	
+	public int indexOf(Object o) {
+		if (o==null) throw new NullPointerException();
+		else{
+			int i = size - 1;
+			while (i >= 0 && !data[i].equals(o)){
+				i--;
+			}
+			return i;
+		}
 	}
 
 	public static void main(String[] args) {
