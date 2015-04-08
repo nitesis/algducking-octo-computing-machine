@@ -31,18 +31,19 @@ public class UnsortedSet<E> extends AbstractArrayCollection<E> implements
 
 	@Override
 	public boolean remove(Object o) {
-		if (o.equals(null)) {
-			throw new IllegalStateException("Uups");
+		int i = indexOf(o);
+		if (o == null) {
+			throw new NullPointerException("Uups");
 		}
-		else if (contains(o)) {
-			for (int i = 0; i < data.length; i++) {
-				if (o.equals(data[i])) {
-					data[i] = data[i+1];
-				}
-			}
+		else if (i < 0) {
+			return false;
+		} else {
+			data[i] = data[size - 1];
+			data[size - 1] = null;
 			size--;
-		}
-		return contains(o);
+			return true;
+		}	
+		
 	}
 
 	@Override
@@ -63,6 +64,19 @@ public class UnsortedSet<E> extends AbstractArrayCollection<E> implements
 	@Override
 	public int size() {
 		return size;
+	}
+	
+	private int indexOf(Object o) {
+		if (o == null) {
+			throw new NullPointerException();
+		} else {
+			int i = size - 1;
+//			sucht o mit dem kleinsten Index
+			while (i >= 0 && !data[i].equals(o) ) {
+				i--;
+			}
+			return i;
+		}
 	}
 
 	public static void main(String[] args) {
