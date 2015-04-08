@@ -62,6 +62,7 @@ public class UnsortedBag<E> extends AbstractArrayCollection<E> {
 		if (o==null) throw new NullPointerException();
 		else{
 			int i = size - 1;
+			// sucht o mit dem grössten Index
 			while (i >= 0 && !data[i].equals(o)){
 				i--;
 			}
