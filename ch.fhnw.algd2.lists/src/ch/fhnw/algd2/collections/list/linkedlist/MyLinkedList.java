@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 import ch.fhnw.algd2.collections.list.MyAbstractList;
 
+
 public class MyLinkedList<E> extends MyAbstractList<E> {
 	private int size = 0;
 	private Node<E> first;
@@ -36,38 +37,33 @@ public class MyLinkedList<E> extends MyAbstractList<E> {
 
 	@Override
 	public boolean remove(Object o) {
-
-		if (o != null && contains(o)) {
-			if (first.next == null) {
-				o = null;
-//				first = new Node<E> (null);
-			} else {
-				o = last;
-				last = null;
+		Node<E> n = first, p = null;
+		while (n != null && n.elem != o && (n.elem == null || !n.elem.equals(o))) {
+			p = n;
+			n = n.next;
+		}
+		if (n != null) {
+			if (n == last) {
+				last = p;
+			}
+			if (p != null) {
+				p.next = n.next;
+			}
+			else {
+				first = n.next;
 			}
 			size--;
-			last.next = null;
 			return true;
+		} else {
+			return false;
 		}
-		return false;
 	}
 	
-	public int indexOf(Object o) {
-		if (o == null) {
-			throw new NullPointerException();
-		}
-		Object [] temp = this.toArray();
-		int i = size - 1;		
-		while (i >= 0 && !temp[i].equals(o)) {
-			i--; 
-		} 
-		return i;
-	}
-
+	
 	@Override
 	public E remove(int index) {
 		// TODO implement this operation (part D)
-		throw new UnsupportedOperationException();
+				throw new UnsupportedOperationException();
 	}
 
 	@Override
@@ -85,8 +81,15 @@ public class MyLinkedList<E> extends MyAbstractList<E> {
 
 	@Override
 	public E get(int index) {
-		// TODO implement this operation (part D)
-		throw new UnsupportedOperationException();
+		Node<E> n = first;
+		if (index < 0 || index >= size) {
+			throw new IndexOutOfBoundsException();
+		} else {
+			while (index > 0) {
+				n = n.next;
+				index--;
+			} return n.elem;
+		} 
 	}
 
 	@Override
