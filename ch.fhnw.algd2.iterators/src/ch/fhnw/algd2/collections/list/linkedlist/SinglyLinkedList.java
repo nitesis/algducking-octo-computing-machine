@@ -142,7 +142,8 @@ public class SinglyLinkedList<E> extends MyAbstractList<E> {
 	}
 
 	private class MyIterator implements Iterator<E> {
-		Node<E> next = first;
+		private Node<E> next = first, p = null, pp = null;
+		private boolean mayRemove = false;
 		private int countI = countL;
 		
 		@Override
@@ -159,18 +160,35 @@ public class SinglyLinkedList<E> extends MyAbstractList<E> {
 				throw new ConcurrentModificationException();
 			}
 			E e = next.elem;
+			pp = p;
+			p = next;
 			next = next.next;
+			mayRemove = true;
 			return e;
 		}
 
 		@Override
 		public void remove() {
-			SinglyLinkedList<E> list = new SinglyLinkedList<E>();
-			Iterator<E> it = iterator();
-			if(hasNext()) {
-				it.next();
-				list.remove(it.next());
+			if(mayRemove = false) {
+				throw new IllegalStateException();
 			}
+			if(countI != countL) {
+				throw new ConcurrentModificationException();
+			}
+			if(pp != null) {
+				pp.next = next;
+			} else {
+				first = next;
+			}
+			if(next == null) {
+				last = pp;
+				p = pp;
+			} 
+			
+			mayRemove = false;
+			countI++;
+			countL++;
+			size++;
 		}
 	}
 
