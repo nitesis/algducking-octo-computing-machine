@@ -12,7 +12,7 @@ class Heap<K> implements PriorityQueue<K> {
 	 */
 	@SuppressWarnings("unchecked")
 	Heap(int capacity) {
-		// TODO allocate array of proper size and assign to heap
+		heap = new HeapNode [capacity];
 	}
 
 	/**
@@ -23,7 +23,7 @@ class Heap<K> implements PriorityQueue<K> {
 	@Override
 	public int size() {
 		// TODO return number of elements currently contained in the heap
-		return 0;
+		return size;
 	}
 
 	/**
@@ -34,7 +34,7 @@ class Heap<K> implements PriorityQueue<K> {
 	@Override
 	public boolean isEmpty() {
 		// TODO return true if no element is in the heap
-		return false;
+		return (size == 0);
 	}
 
 	/**
@@ -44,8 +44,8 @@ class Heap<K> implements PriorityQueue<K> {
 	 */
 	@Override
 	public boolean isFull() {
-		// TODO return true if no further element can be inserted to the heap
-		return false;
+		
+		return (size == heap.length);
 	}
 
 	/**
@@ -54,6 +54,7 @@ class Heap<K> implements PriorityQueue<K> {
 	@Override
 	public void clear() {
 		// TODO clear the heap from all elements
+		size = 0;
 	}
 
 	/**
@@ -70,7 +71,11 @@ class Heap<K> implements PriorityQueue<K> {
 	 */
 	@Override
 	public void add(K element, long priority) throws QueueFullException {
-		// TODO add the item element with the priority priority to the heap
+		// TODO add the item element with the priority priority to the heap		
+		
+		heap[size] = new HeapNode<K>(element, priority);
+		size++;
+		siftUp(size-1);
 	}
 
 	/**
@@ -85,7 +90,12 @@ class Heap<K> implements PriorityQueue<K> {
 	public K removeMin() throws QueueEmptyException {
 		// TODO return the element from the heap's root and remove the element from
 		// the heap
-		return null;
+		K min = heap[0].element;
+		heap[0] = heap[size-1];
+		size--;
+		siftDown(0);
+		
+		return min;
 	}
 
 	/**
@@ -95,7 +105,22 @@ class Heap<K> implements PriorityQueue<K> {
 	 *          the index at which the percolate begins
 	 */
 	private void siftDown(int start) {
-		// TODO implement sift down for element at start
+		int succ = 2 * start + 1; // linker Nachfolger
+		if (succ + 1 < size && heap[succ].priority > heap[succ + 1].priority) {
+			succ++; // nimmt das rechte, ist wie (2 * start + 2)
+			while (succ < size && heap[start].priority > heap[succ].priority) {
+				HeapNode<K> temp = heap[start];
+				heap[start] = heap[succ];
+				heap[succ] = temp;
+				start = succ;
+				// ...und jetzt wird noch die Invariante etabliert
+				succ = 2 * start + 1;
+				if (succ + 1 < size && heap[succ].priority > heap[succ + 1].priority) {
+					succ++;
+				}
+			}
+		}
+		
 	}
 
 	/**
@@ -106,21 +131,31 @@ class Heap<K> implements PriorityQueue<K> {
 	 */
 	private void siftUp(int start) {
 		// TODO implement sift up for element at start
+		int pred = (start - 1)/2;
+		while (start != 0 && heap[pred].priority > heap[start].priority) {
+			HeapNode<K> temp = heap[start];
+			heap[start] = heap[pred];
+			heap[pred] = temp;
+		}
 	}
 
 	/**
-	 * Erzeugt ein neues long[] Array und kopiert die Werte der Prioritäten aus
-	 * dem Heaparray dort hinein. Die Grösse des zurückgegebenen Arrays soll der
+	 * Erzeugt ein neues long[] Array und kopiert die Werte der Prioritï¿½ten aus
+	 * dem Heaparray dort hinein. Die Grï¿½sse des zurï¿½ckgegebenen Arrays soll der
 	 * Anzahl Elemente in der Queue entsprechen (= size()). An der Position 0 soll
-	 * die kleinste Priorität (= Priorität des Wurzelelementes) stehen.
+	 * die kleinste Prioritï¿½t (= Prioritï¿½t des Wurzelelementes) stehen.
 	 * 
-	 * @return Array mit allen Prioritäten
+	 * @return Array mit allen Prioritï¿½ten
 	 */
 	@Override
 	public long[] toLongArray() {
 		// TODO return array with all the priorities currently in the heap. Use
 		// order of storage. Put root element at position 0.
-		return null;
+		long[] l = new long[size];
+		for (int i = 0; i < size; i++){
+			l[i] = heap[i].priority;
+		}
+		return l;
 	}
 
 	private static class HeapNode<K> {
