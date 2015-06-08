@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<graph
+	type="ch.fhnw.algd2.graphedit.AdjListGraph"
+	directed="true"
+	weighted="false">
+	<vertex x="189.0" y="376.0" id="0">
+		19
+	</vertex>
+	<vertex x="302.0" y="519.0" id="1">
+		18
+	</vertex>
+	<vertex x="316.0" y="375.0" id="2">
+		17
+	</vertex>
+	<vertex x="380.0" y="430.0" id="3">
+		16
+	</vertex>
+	<vertex x="201.0" y="519.0" id="4">
+		15
+	</vertex>
+	<vertex x="250.0" y="472.0" id="5">
+		14
+	</vertex>
+	<vertex x="293.0" y="433.0" id="6">
+		13
+	</vertex>
+	<vertex x="255.0" y="316.0" id="7">
+		12
+	</vertex>
+	<vertex x="95.0" y="318.0" id="8">
+		11
+	</vertex>
+	<vertex x="211.0" y="137.0" id="9">
+		10
+	</vertex>
+	<vertex x="191.0" y="77.0" id="10">
+		9
+	</vertex>
+	<vertex x="307.0" y="238.0" id="11">
+		8
+	</vertex>
+	<vertex x="310.0" y="79.0" id="12">
+		7
+	</vertex>
+	<vertex x="370.0" y="137.0" id="13">
+		6
+	</vertex>
+	<vertex x="215.0" y="237.0" id="14">
+		5
+	</vertex>
+	<vertex x="256.0" y="186.0" id="15">
+		4
+	</vertex>
+	<vertex x="285.0" y="137.0" id="16">
+		3
+	</vertex>
+	<vertex x="250.0" y="32.0" id="17">
+		2
+	</vertex>
+	<vertex x="87.0" y="32.0" id="18">
+		1
+	</vertex>
+	<vertex x="203.0" y="432.0" id="19">
+		20
+	</vertex>
+	<edge from="0" to="19">
+	</edge>
+	<edge from="1" to="5">
+	</edge>
+	<edge from="1" to="3">
+	</edge>
+	<edge from="2" to="3">
+	</edge>
+	<edge from="4" to="1">
+	</edge>
+	<edge from="5" to="6">
+	</edge>
+	<edge from="5" to="4">
+	</edge>
+	<edge from="6" to="2">
+	</edge>
+	<edge from="7" to="2">
+	</edge>
+	<edge from="7" to="0">
+	</edge>
+	<edge from="8" to="7">
+	</edge>
+	<edge from="9" to="15">
+	</edge>
+	<edge from="10" to="9">
+	</edge>
+	<edge from="11" to="15">
+	</edge>
+	<edge from="11" to="13">
+	</edge>
+	<edge from="12" to="13">
+	</edge>
+	<edge from="14" to="11">
+	</edge>
+	<edge from="15" to="16">
+	</edge>
+	<edge from="15" to="14">
+	</edge>
+	<edge from="16" to="12">
+	</edge>
+	<edge from="17" to="12">
+	</edge>
+	<edge from="17" to="10">
+	</edge>
+	<edge from="18" to="17">
+	</edge>
+</graph>

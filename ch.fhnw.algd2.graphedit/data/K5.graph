@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<graph
+	type="ch.fhnw.algd2.graphedit.AdjListGraph"
+	directed="false"
+	weighted="false">
+	<vertex x="388.0" y="184.0" id="0">
+		5
+	</vertex>
+	<vertex x="253.0" y="304.0" id="1">
+		4
+	</vertex>
+	<vertex x="121.0" y="126.0" id="2">
+		3
+	</vertex>
+	<vertex x="158.0" y="46.0" id="3">
+		2
+	</vertex>
+	<vertex x="295.0" y="37.0" id="4">
+		1
+	</vertex>
+	<edge from="0" to="4">
+	</edge>
+	<edge from="0" to="2">
+	</edge>
+	<edge from="0" to="1">
+	</edge>
+	<edge from="1" to="4">
+	</edge>
+	<edge from="1" to="3">
+	</edge>
+	<edge from="1" to="2">
+	</edge>
+	<edge from="1" to="0">
+	</edge>
+	<edge from="2" to="4">
+	</edge>
+	<edge from="2" to="3">
+	</edge>
+	<edge from="2" to="1">
+	</edge>
+	<edge from="2" to="0">
+	</edge>
+	<edge from="3" to="4">
+	</edge>
+	<edge from="3" to="2">
+	</edge>
+	<edge from="3" to="1">
+	</edge>
+	<edge from="4" to="3">
+	</edge>
+	<edge from="4" to="2">
+	</edge>
+	<edge from="4" to="1">
+	</edge>
+	<edge from="4" to="0">
+	</edge>
+</graph>

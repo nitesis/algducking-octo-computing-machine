@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<graph
+	type="ch.fhnw.algd2.graphedit.WeightedGraphImpl"
+	directed="false"
+	weighted="true">
+	<vertex x="649.0" y="667.0" id="0">
+		Chiasso
+	</vertex>
+	<vertex x="465.0" y="158.0" id="1">
+		Olten
+	</vertex>
+	<vertex x="767.0" y="189.0" id="2">
+		St.Gallen
+	</vertex>
+	<vertex x="50.0" y="557.0" id="3">
+		Genève
+	</vertex>
+	<vertex x="582.0" y="28.0" id="4">
+		Schaffhausen
+	</vertex>
+	<vertex x="308.0" y="297.0" id="5">
+		Bern
+	</vertex>
+	<vertex x="631.0" y="567.0" id="6">
+		Bellinzona
+	</vertex>
+	<vertex x="270.0" y="593.0" id="7">
+		Martigny
+	</vertex>
+	<vertex x="601.0" y="247.0" id="8">
+		Zug
+	</vertex>
+	<vertex x="643.0" y="146.0" id="9">
+		Winterthur
+	</vertex>
+	<vertex x="451.0" y="469.0" id="10">
+		Brig
+	</vertex>
+	<vertex x="245.0" y="79.0" id="11">
+		Porrentruy
+	</vertex>
+	<vertex x="363.0" y="358.0" id="12">
+		Thun
+	</vertex>
+	<vertex x="172.0" y="298.0" id="13">
+		Neuchâtel
+	</vertex>
+	<vertex x="316.0" y="143.0" id="14">
+		Delémont
+	</vertex>
+	<vertex x="718.0" y="295.0" id="15">
+		Glarus
+	</vertex>
+	<vertex x="170.0" y="461.0" id="16">
+		Lausanne
+	</vertex>
+	<vertex x="246.0" y="352.0" id="17">
+		Fribourg
+	</vertex>
+	<vertex x="623.0" y="296.0" id="18">
+		Arth-Goldau
+	</vertex>
+	<vertex x="575.0" y="402.0" id="19">
+		Andermatt
+	</vertex>
+	<vertex x="815.0" y="292.0" id="20">
+		Sargans
+	</vertex>
+	<vertex x="535.0" y="296.0" id="21">
+		Luzern
+	</vertex>
+	<vertex x="415.0" y="72.0" id="22">
+		Basel
+	</vertex>
+	<vertex x="769.0" y="94.0" id="23">
+		Romanshorn
+	</vertex>
+	<vertex x="810.0" y="494.0" id="24">
+		St. Moritz
+	</vertex>
+	<vertex x="348.0" y="594.0" id="25">
+		Sion
+	</vertex>
+	<vertex x="809.0" y="359.0" id="26">
+		Chur
+	</vertex>
+	<vertex x="540.0" y="600.0" id="27">
+		Locarno
+	</vertex>
+	<vertex x="765.0" y="254.0" id="28">
+		Ziegelbrücke
+	</vertex>
+	<vertex x="593.0" y="190.0" id="29">
+		Zürich
+	</vertex>
+	<vertex x="442.0" y="379.0" id="30">
+		Interlaken
+	</vertex>
+	<vertex x="246.0" y="236.0" id="31">
+		Biel
+	</vertex>
+</graph>

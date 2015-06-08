@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<graph
+	type="ch.fhnw.algd2.graphedit.WeightedGraphImpl"
+	directed="false"
+	weighted="true">
+	<vertex x="649.0" y="667.0" id="0">
+		Chiasso
+	</vertex>
+	<vertex x="465.0" y="158.0" id="1">
+		Olten
+	</vertex>
+	<vertex x="810.0" y="171.0" id="2">
+		St.Gallen
+	</vertex>
+	<vertex x="50.0" y="557.0" id="3">
+		Genève
+	</vertex>
+	<vertex x="582.0" y="28.0" id="4">
+		Schaffhausen
+	</vertex>
+	<vertex x="308.0" y="297.0" id="5">
+		Bern
+	</vertex>
+	<vertex x="631.0" y="567.0" id="6">
+		Bellinzona
+	</vertex>
+	<vertex x="270.0" y="593.0" id="7">
+		Martigny
+	</vertex>
+	<vertex x="601.0" y="247.0" id="8">
+		Zug
+	</vertex>
+	<vertex x="643.0" y="146.0" id="9">
+		Winterthur
+	</vertex>
+	<vertex x="431.0" y="491.0" id="10">
+		Brig
+	</vertex>
+	<vertex x="245.0" y="79.0" id="11">
+		Porrentruy
+	</vertex>
+	<vertex x="363.0" y="358.0" id="12">
+		Thun
+	</vertex>
+	<vertex x="172.0" y="298.0" id="13">
+		Neuchâtel
+	</vertex>
+	<vertex x="316.0" y="143.0" id="14">
+		Delémont
+	</vertex>
+	<vertex x="718.0" y="295.0" id="15">
+		Glarus
+	</vertex>
+	<vertex x="170.0" y="461.0" id="16">
+		Lausanne
+	</vertex>
+	<vertex x="246.0" y="352.0" id="17">
+		Fribourg
+	</vertex>
+	<vertex x="623.0" y="296.0" id="18">
+		Arth-Goldau
+	</vertex>
+	<vertex x="575.0" y="402.0" id="19">
+		Andermatt
+	</vertex>
+	<vertex x="829.0" y="297.0" id="20">
+		Sargans
+	</vertex>
+	<vertex x="535.0" y="296.0" id="21">
+		Luzern
+	</vertex>
+	<vertex x="415.0" y="72.0" id="22">
+		Basel
+	</vertex>
+	<vertex x="769.0" y="94.0" id="23">
+		Romanshorn
+	</vertex>
+	<vertex x="810.0" y="494.0" id="24">
+		St. Moritz
+	</vertex>
+	<vertex x="348.0" y="594.0" id="25">
+		Sion
+	</vertex>
+	<vertex x="830.0" y="368.0" id="26">
+		Chur
+	</vertex>
+	<vertex x="540.0" y="600.0" id="27">
+		Locarno
+	</vertex>
+	<vertex x="765.0" y="254.0" id="28">
+		Ziegelbrücke
+	</vertex>
+	<vertex x="593.0" y="190.0" id="29">
+		Zürich
+	</vertex>
+	<vertex x="447.0" y="382.0" id="30">
+		Interlaken
+	</vertex>
+	<vertex x="246.0" y="236.0" id="31">
+		Biel
+	</vertex>
+	<edge from="0" to="6">
+		57.0	</edge>
+	<edge from="1" to="22">
+		42.0	</edge>
+	<edge from="1" to="5">
+		78.0	</edge>
+	<edge from="1" to="31">
+		61.0	</edge>
+	<edge from="1" to="21">
+		57.0	</edge>
+	<edge from="1" to="29">
+		73.0	</edge>
+	<edge from="2" to="23">
+		30.0	</edge>
+	<edge from="2" to="20">
+		62.0	</edge>
+	<edge from="2" to="9">
+		61.0	</edge>
+	<edge from="3" to="16">
+		64.0	</edge>
+	<edge from="4" to="29">
+		50.0	</edge>
+	<edge from="5" to="31">
+		35.0	</edge>
+	<edge from="5" to="17">
+		34.0	</edge>
+	<edge from="5" to="21">
+		105.0	</edge>
+	<edge from="5" to="13">
+		54.0	</edge>
+	<edge from="5" to="1">
+		78.0	</edge>
+	<edge from="5" to="12">
+		37.0	</edge>
+	<edge from="6" to="18">
+		142.0	</edge>
+	<edge from="6" to="0">
+		57.0	</edge>
+	<edge from="6" to="27">
+		20.0	</edge>
+	<edge from="7" to="16">
+		68.0	</edge>
+	<edge from="7" to="25">
+		26.0	</edge>
+	<edge from="8" to="18">
+		16.0	</edge>
+	<edge from="8" to="21">
+		30.0	</edge>
+	<edge from="8" to="29">
+		35.0	</edge>
+	<edge from="9" to="23">
+		56.0	</edge>
+	<edge from="9" to="2">
+		61.0	</edge>
+	<edge from="9" to="29">
+		30.0	</edge>
+	<edge from="10" to="19">
+		58.0	</edge>
+	<edge from="10" to="27">
+		81.0	</edge>
+	<edge from="10" to="25">
+		54.0	</edge>
+	<edge from="10" to="12">
+		126.0	</edge>
+	<edge from="11" to="14">
+		28.0	</edge>
+	<edge from="12" to="5">
+		37.0	</edge>
+	<edge from="12" to="10">
+		126.0	</edge>
+	<edge from="12" to="30">
+		44.0	</edge>
+	<edge from="13" to="5">
+		54.0	</edge>
+	<edge from="13" to="31">
+		29.0	</edge>
+	<edge from="13" to="16">
+		75.0	</edge>
+	<edge from="14" to="22">
+		38.0	</edge>
+	<edge from="14" to="31">
+		50.0	</edge>
+	<edge from="14" to="11">
+		28.0	</edge>
+	<edge from="15" to="28">
+		11.0	</edge>
+	<edge from="16" to="17">
+		69.0	</edge>
+	<edge from="16" to="3">
+		64.0	</edge>
+	<edge from="16" to="7">
+		68.0	</edge>
+	<edge from="16" to="13">
+		75.0	</edge>
+	<edge from="17" to="5">
+		34.0	</edge>
+	<edge from="17" to="16">
+		69.0	</edge>
+	<edge from="18" to="19">
+		62.0	</edge>
+	<edge from="18" to="6">
+		142.0	</edge>
+	<edge from="18" to="21">
+		31.0	</edge>
+	<edge from="18" to="8">
+		16.0	</edge>
+	<edge from="19" to="18">
+		62.0	</edge>
+	<edge from="19" to="10">
+		58.0	</edge>
+	<edge from="19" to="26">
+		114.0	</edge>
+	<edge from="20" to="26">
+		27.0	</edge>
+	<edge from="20" to="2">
+		62.0	</edge>
+	<edge from="20" to="28">
+		33.0	</edge>
+	<edge from="21" to="18">
+		31.0	</edge>
+	<edge from="21" to="5">
+		105.0	</edge>
+	<edge from="21" to="30">
+		82.0	</edge>
+	<edge from="21" to="1">
+		57.0	</edge>
+	<edge from="21" to="8">
+		30.0	</edge>
+	<edge from="22" to="14">
+		38.0	</edge>
+	<edge from="22" to="1">
+		42.0	</edge>
+	<edge from="22" to="29">
+		100.0	</edge>
+	<edge from="23" to="2">
+		30.0	</edge>
+	<edge from="23" to="9">
+		56.0	</edge>
+	<edge from="24" to="26">
+		137.0	</edge>
+	<edge from="25" to="10">
+		54.0	</edge>
+	<edge from="25" to="7">
+		26.0	</edge>
+	<edge from="26" to="19">
+		114.0	</edge>
+	<edge from="26" to="20">
+		27.0	</edge>
+	<edge from="26" to="24">
+		137.0	</edge>
+	<edge from="27" to="6">
+		20.0	</edge>
+	<edge from="27" to="10">
+		81.0	</edge>
+	<edge from="28" to="15">
+		11.0	</edge>
+	<edge from="28" to="20">
+		33.0	</edge>
+	<edge from="28" to="29">
+		62.0	</edge>
+	<edge from="29" to="22">
+		100.0	</edge>
+	<edge from="29" to="1">
+		73.0	</edge>
+	<edge from="29" to="4">
+		50.0	</edge>
+	<edge from="29" to="9">
+		30.0	</edge>
+	<edge from="29" to="28">
+		62.0	</edge>
+	<edge from="29" to="8">
+		35.0	</edge>
+	<edge from="30" to="21">
+		82.0	</edge>
+	<edge from="30" to="12">
+		44.0	</edge>
+	<edge from="31" to="5">
+		35.0	</edge>
+	<edge from="31" to="14">
+		50.0	</edge>
+	<edge from="31" to="13">
+		29.0	</edge>
+	<edge from="31" to="1">
+		61.0	</edge>
+</graph>
