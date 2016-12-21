@@ -1,4 +1,4 @@
-package ch.fhnw.algd.apprentice;
+package prod;
 
 public class Recursion {
 
