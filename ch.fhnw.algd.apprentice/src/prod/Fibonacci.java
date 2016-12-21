@@ -1,9 +1,9 @@
-package ch.fhnw.algd.apprentice;
+package prod;
 
 public class Fibonacci {
 
 	public static void main(String[] args) {
-		int ergebnis = fibonacciRecursive(4);
+		int ergebnis = fibonacciRecursive(6);
 		System.out.println("Das Ergebnis lautet: " + ergebnis);
 	}
 
